@@ -1,14 +1,6 @@
 require "test_helper"
 
-require "active_record"
-require "muffin-blog/app/models/application_record"
-require "muffin-blog/app/models/post"
-
 class ActiveRecordTest < Minitest::Test
-  def setup
-    Post.establish_connection(
-      database: "#{__dir__}/muffin-blog/db/development.sqlite3")
-  end
 
   def test_initialize
     post = Post.new(id: 1, title: "My first post")
@@ -17,10 +9,10 @@ class ActiveRecordTest < Minitest::Test
   end
 
   def test_find
-    post = Post.find(1)
+    post = Post.find(2)
     assert_kind_of Post, post
-    assert_equal 1, post.id
-    assert_equal "Blueberry Muffins", post.title
+    assert_equal 2, post.id
+    assert_equal "Blueberry Muffins 2", post.title
   end
 
   def test_execute_sql

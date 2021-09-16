@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require_relative "lib/mini/rails/version"
+require_relative "lib/rails/version"
 
 Gem::Specification.new do |spec|
   spec.name          = "mini-rails"
