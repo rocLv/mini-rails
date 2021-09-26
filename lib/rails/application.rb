@@ -10,18 +10,13 @@ module Rails
     end
 
     def initialize!
-      config_envionment_path = caller.first
-      @root = Pathname.new(
-        File.expand_path("../..",
-                         config_envionment_path)
-      )
+      config_environment_path = caller.first
+      @root = Pathname.new(File.expand_path("../..", config_environment_path))
 
-      ActiveSupport::Dependencies.autoload_paths =
-        Dir["#{@root}/app/*"]
+      ActiveSupport::Dependencies.autoload_paths = Dir["#{@root}/app/*"]
 
       ActiveRecord::Base.establish_connection(
-        database: "#{@root}/db/#{Rails.env}.sqlite3"
-      )
+        database: "#{@root}/db/#{Rails.env}.sqlite3")
     end
 
     def root

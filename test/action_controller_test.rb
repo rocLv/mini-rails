@@ -1,8 +1,9 @@
 require "test_helper"
+
 class ActionControllerTest < Minitest::Test
   class TestController < ActionController::Base
-   before_action :callback, only: [:show]
-   after_action :callback_after, only: [:show]
+    before_action :callback, only: [:show]
+    after_action :callback_after, only: [:show]
 
     def index
       response << "index"
@@ -20,7 +21,6 @@ class ActionControllerTest < Minitest::Test
       def callback_after
         response << "callback_after"
       end
-
   end
 
   def test_calls_index

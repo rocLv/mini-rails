@@ -35,7 +35,6 @@ module ActiveRecord
         sql += " ORDER BY " + @order_values.join(", ")
       end
 
-
       sql
     end
 
@@ -45,6 +44,10 @@ module ActiveRecord
 
     def first
       records.first
+    end
+
+    def each(&block)
+      records.each(&block)
     end
   end
 end

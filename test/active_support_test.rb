@@ -1,7 +1,6 @@
 require "test_helper"
 
 class ActiveSupportTest < Minitest::Test
-
   def test_search_for_file
     file = ActiveSupport::Dependencies.search_for_file("application_controller")
     assert_equal "#{__dir__}/muffin_blog/app/controllers/application_controller.rb",

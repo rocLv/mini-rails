@@ -7,7 +7,7 @@ module ActionController
     end
 
     def params
-      # request.params.symbolize_keys
+      request.params.symbolize_keys
     end
   end
 end

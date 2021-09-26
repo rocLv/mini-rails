@@ -1,12 +1,6 @@
-# frozen_string_literal: true
-
-require_relative "rails/version"
-require "rails/application"
-
 module Rails
-  class Error < StandardError; end
-  # Your code goes here...
-  #
+  autoload :Application, "rails/application"
+
   def self.env
     ENV["RAILS_ENV"] || ENV["RACK_ENV"] || "development"
   end

@@ -31,9 +31,6 @@ module ActiveRecord
       def columns(table_name)
         @db.table_info(table_name).map { |info| info["name"].to_sym }
       end
-
-      # class Post < ActiveRecord::Base
-
     end
 
     # We could implement another adapter to support other DB engines.
